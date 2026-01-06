@@ -28,3 +28,10 @@ function book() {
     document.getElementById("msg").innerText = "Booked!";
   });
 }
+function doGet() {
+  const sheet = SpreadsheetApp.getActive().getSheetByName("Sheet1");
+  const data = sheet.getDataRange().getValues();
+  return ContentService.createTextOutput(JSON.stringify(data))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
