@@ -20,7 +20,7 @@ function book() {
     name: document.getElementById("name").value
   };
 
-  fetch("YOUR_GOOGLE_APPS_SCRIPT_URL", {
+  fetch("https://script.google.com/macros/s/AKfycbz9AoMsaK5gY8nNnMBsUggqUQHQ8p35XOzYEAYw3BLedJnsDKqh5rTm5njxEsiIG5OC/exec", {
     method: "POST",
     body: JSON.stringify(data)
   })
