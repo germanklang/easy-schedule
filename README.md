@@ -1,2 +1,24 @@
 # easy-schedule
 schedule
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Schedule</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Book a time</h2>
+
+<select id="date"></select>
+<select id="time"></select>
+
+<input id="name" placeholder="Your name">
+<button onclick="book()">Book</button>
+
+<p id="msg"></p>
+
+<script src="script.js"></script>
+</body>
+</html>
