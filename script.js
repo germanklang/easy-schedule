@@ -24,7 +24,7 @@ function book() {
     name: document.getElementById("name").value
   };
 
-  fetch("https://script.google.com/macros/s/AKfycbwo8K7NIZHlsIbT87kESY1ztuZCe0qVxZ6QsCdd5YPApQnn6_nJ6ng3LC3vynLqshot_Q/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbx--po5sL_yW6rtTooAfNmMtAtjgk3GGVGvJA20YRUmdTACg7Bf493jLVolLiFKxXlXpw/exec", {
     method: "POST",
     headers: {
       "Content-Type": "text/plain;charset=utf-8"
