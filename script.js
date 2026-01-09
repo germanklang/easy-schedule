@@ -1,4 +1,4 @@
-const times = ["10:00","11:00","14:00","15:00"];
+const times = ["13:00","13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30","18:00","18:30","20:00","20:30""21:00","21:30",];
 
 const dateSel = document.getElementById("date");
 const timeSel = document.getElementById("time");
@@ -33,5 +33,20 @@ function doGet() {
   const data = sheet.getDataRange().getValues();
   return ContentService.createTextOutput(JSON.stringify(data))
     .setMimeType(ContentService.MimeType.JSON);
+  etch("DEINE_WEBAPP_URL", {
+  method: "POST",
+  body: JSON.stringify({
+    time: selectedTime,
+    name: userName,
+    email: userEmail
+  }),
+  headers: {
+    'Content-Type': 'application/json'
+  }
+})
+.then(res => res.text())
+.then(res => console.log("Buchung gesendet:", res))
+.catch(err => console.error(err));
+
 }
 
