@@ -24,7 +24,7 @@ function book() {
     name: document.getElementById("name").value
   };
 
-  fetch("https://script.google.com/macros/s/AKfycbzx0gRLP2Ur3uIUTqyqHtsl7NtW-MP49uGh8MDmg4OfTpSZXDLVpZdx6A0mMCo9nvaymA/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbzFCNCI1O1G1QWNE4kOzD3zAbFYLvzQfPekdJGHGMaNM2XlhKAJGH96W3snC8d1n7DOAQ/exec", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
