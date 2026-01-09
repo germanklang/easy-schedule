@@ -23,15 +23,26 @@ function book() {
     time: timeSel.value,
     name: document.getElementById("name").value
   };
+const url = 'https://script.google.com/macros/s/AKfycbx--po5sL_yW6rtTooAfNmMtAtjgk3GGVGvJA20YRUmdTACg7Bf493jLVolLiFKxXlXpw/exec';
+const data = { name: 'John Doe', email: 'john@example.com', message: 'Hello!' };
 
-  fetch("https://script.google.com/macros/s/AKfycbx--po5sL_yW6rtTooAfNmMtAtjgk3GGVGvJA20YRUmdTACg7Bf493jLVolLiFKxXlXpw/exec", {
-    method: "POST",
-    headers: {
-      "Content-Type": "text/plain;charset=utf-8"
-    },
-    body: JSON.stringify(data)
-  })
-  .then(res => res.text())
+fetch("https://script.google.com/macros/s/AKfycbx--po5sL_yW6rtTooAfNmMtAtjgk3GGVGvJA20YRUmdTACg7Bf493jLVolLiFKxXlXpw/exec", {
+  method: 'POST',
+  mode: 'cors', // Ensure CORS mode is on
+  headers: {
+    // Using text/plain avoids the 'Preflight' check
+    'Content-Type': 'text/plain;charset=utf-8', 
+  },
+  body: JSON.stringify(data)
+})
+.then(res => res.json())
+.then(response => console.log('Success:', response))
+.catch(err => console.error('Check your deployment settings:', err));
+
+  
+
+    
+  
   .then(msg => {
     console.log("Server:", msg);
     document.getElementById("msg").innerText = "Booked!";
